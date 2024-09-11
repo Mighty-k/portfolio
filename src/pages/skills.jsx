@@ -8,6 +8,7 @@ import express from '../img/express.png'
 import php from '../img/php.png'
 import vs from '../img/vs.png'
 import git from '../img/git.png'
+import typescript from '../img/typescript.png'
 import figma from '../img/figma.png'
 import { motion } from 'framer-motion'
 
@@ -142,6 +143,15 @@ const Skills = () =>{
                     initial={{opacity:0, y:50}}
                 whileInView={{opacity:1, y:0}}
                 transition={{duration:1, delay:0.23, type:'spring'}}
+                style={{willChange:'transform, opacity'}}
+                    className="icons col">
+                    <img src={typescript} alt="figma" />
+                    <p>typescript</p>
+                    </motion.div>
+                    <motion.div
+                    initial={{opacity:0, y:50}}
+                whileInView={{opacity:1, y:0}}
+                transition={{duration:1, delay:0.24, type:'spring'}}
                 style={{willChange:'transform, opacity'}}
                     className="icons col">
                     <img src={figma} alt="figma" />

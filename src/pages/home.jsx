@@ -204,7 +204,9 @@ const Home = () => {
                     <p>    
                         Want to start new project?<br /> 
                         You can send a mail to <span className="txt">tiolupopo@gmail.com</span> <br />
-                        or whatsapp <span className="txt">+234 8113851121</span>.
+                        or whatsapp <span className="txt">+234 7042837826</span>. <br/>
+                        My Linkedin profile is <a target="blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/mighty-popoola-3b5766260">here</a>. <br/>
+                        My Github profile is <a target="blank" rel="noopener noreferrer" href="https://github.com/Mighty-k">here</a> .
                     </p>
                 </motion.div>
             </div>
