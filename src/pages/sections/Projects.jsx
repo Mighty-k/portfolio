@@ -41,7 +41,7 @@ const Projects = () => {
       tags: ['HTML', 'css', 'express','mongodb'],
       image: '/images/notes.png',
       github: 'https://github.com/Mighty-k/ecommerce-dashboard',
-      live: 'https://ecommerce-admin.netlify.app'
+      live: 'https://notes-lazydev.vercel.app/'
     },
 
   ]
