@@ -1,7 +1,7 @@
 // App.jsx
 import { BrowserRouter as Router } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
-import Home from './pages/Home'
+import Landing from './pages/home'
 import './main.css'
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <Router>
       <AnimatePresence mode='wait'>
         <div className="min-h-screen bg-gradient-to-br from-dark to-dark-light text-gray-100 font-sans">
-          <Home />
+          <Landing />
         </div>
       </AnimatePresence>
     </Router>

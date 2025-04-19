@@ -1,6 +1,5 @@
-// components/Home.jsx
+
 import { useState, useEffect } from 'react'
-// import { motion } from 'framer-motion'
 import Hero from './sections/Hero'
 import About from './sections/About'
 import Skills from './sections/Skills'
@@ -10,7 +9,7 @@ import Navbar from './ui/Navbar'
 import Footer from './ui/Footer'
 import Loader from './ui/Loader'
 
-const Home = () => {
+const Landing = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -40,4 +39,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Landing
