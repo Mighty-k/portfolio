@@ -23,7 +23,7 @@ const Projects = () => {
       tags: ['react'],
       image: '/images/quiz.png',
       github: 'https://github.com/Mighty-k/quiz-app',
-      live: 'https://quizme-app.netlify.app'
+      live: 'https://ms-quizapp.netlify.app/'
     },
     {
       id: 3,
