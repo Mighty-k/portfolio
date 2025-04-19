@@ -40,7 +40,7 @@ const Projects = () => {
       description: 'A  lightweight notes application with user authentication and basic notes app functionalities ',
       tags: ['HTML', 'css', 'express','mongodb'],
       image: '/images/notes.png',
-      github: 'https://github.com/Mighty-k/ecommerce-dashboard',
+      github: 'https://github.com/Mighty-k/notesApp',
       live: 'https://notes-lazydev.vercel.app/'
     },
 
