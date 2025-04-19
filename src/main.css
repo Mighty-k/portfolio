@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap');
+
+@import "tailwindcss";
+@font-face {
+  font-family: 'Worksans'; 
+  src: url('./WorkSans-VariableFont_wght.ttf') format('truetype'); 
+  font-weight: normal; 
+  font-style: normal; 
+}
+
+/* index.css */
+
+/* @tailwind base;
+@tailwind components; */
+@tailwind utilities;
+
+/* Custom base styles */
+/* @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply antialiased text-gray-100;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+  
+  ::selection {
+    @apply  text-white;
+  }
+   */
+  /* Scrollbar styling */
+  /* ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply  rounded-full;
+  }
+} */
+
+/* Custom components */
+/* @layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary to-accent rounded-lg text-white font-medium hover:shadow-lg transition-all;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:/10 transition-all;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-display font-bold mb-4;
+  }
+  
+  .section-subtitle {
+    @apply text-xl text-gray-300 mb-6;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+} */

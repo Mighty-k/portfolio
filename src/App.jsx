@@ -1,13 +1,17 @@
-import {BrowserRouter as Router, Routes,Route } from "react-router-dom"
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import Home from "./pages/home"
-const App = () =>{
-  return(
+// App.jsx
+import { BrowserRouter as Router } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion'
+import Home from './pages/Home'
+import './main.css'
+
+function App() {
+  return (
     <Router>
-      <Routes>
-        <Route exact path='/' element ={<Home/>}/>
-      </Routes>
+      <AnimatePresence mode='wait'>
+        <div className="min-h-screen bg-gradient-to-br from-dark to-dark-light text-gray-100 font-sans">
+          <Home />
+        </div>
+      </AnimatePresence>
     </Router>
   )
 }
