@@ -1,7 +1,7 @@
 // components/sections/Contact.jsx
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { FiMail, FiMapPin, FiPhone,FiGithub,FiLinkedin,FiTwitter } from 'react-icons/fi'
+import { FiMail, FiMapPin, FiPhone,FiGithub,FiLinkedin} from 'react-icons/fi'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-20 bg-dark">
+    <section id="contact" className="py-20 bg-gray-950">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -59,7 +59,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="lg:w-1/3"
           >
-            <div className="bg-dark-light rounded-xl p-8 border border-gray-800 h-full">
+            <div className="bg-gray-950-light rounded-xl p-8 border border-gray-800 h-full">
               <h3 className="text-2xl font-display font-semibold mb-6">
                 Contact Information
               </h3>
@@ -127,15 +127,6 @@ const Contact = () => {
                   >
                     <FiLinkedin className="text-xl" />
                   </a>
-                  <a
-                    href="https://twitter.com/mighty_dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label="Twitter"
-                  >
-                    <FiTwitter className="text-xl" />
-                  </a>
                 </div>
               </div>
             </div>
@@ -149,7 +140,7 @@ const Contact = () => {
             viewport={{ once: true }}
             className="lg:w-2/3"
           >
-            <form onSubmit={handleSubmit} className="bg-dark-light rounded-xl p-8 border border-gray-800">
+            <form onSubmit={handleSubmit} className="bg-gray-950-light rounded-xl p-8 border border-gray-800">
               <h3 className="text-2xl font-display font-semibold mb-6">
                 Send Me a Message
               </h3>

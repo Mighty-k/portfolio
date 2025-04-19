@@ -4,7 +4,7 @@ import { FiGithub, FiLinkedin, FiTwitter, FiMail } from 'react-icons/fi'
 
 const Footer = () => {
   return (
-    <footer className="bg-dark-light py-12 border-t border-gray-800">
+    <footer className="bg-gray-950-light py-12 border-t border-gray-800">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div
@@ -16,9 +16,9 @@ const Footer = () => {
           >
             <a
               href="#"
-              className="text-2xl font-display font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+              className="text-2xl font-display font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-blue-950"
             >
-              MightyDev
+              Mighty
             </a>
             <p className="text-gray-800 mt-2">
               Creating digital experiences that matter

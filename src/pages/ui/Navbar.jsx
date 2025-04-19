@@ -35,16 +35,16 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-dark/90 backdrop-blur-md py-2 shadow-lg' : 'bg-transparent py-4'
+        scrolled ? ' backdrop-blur-md py-2 shadow-lg' : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.a
           href="#"
-          className="text-2xl font-display font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+          className="text-2xl font-display text-blue-950 font-bold bg-gradient-to-r from-primary to-accent bg-clip-text "
           whileHover={{ scale: 1.05 }}
         >
-          MightyDev
+          Mighty
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -53,7 +53,7 @@ const Navbar = () => {
             <motion.a
               key={index}
               href={item.href}
-              className="text-gray-300 hover:text-white transition-colors relative group"
+              className=" text-blue-950 hover:text-white transition-colors relative group"
               whileHover={{ scale: 1.05 }}
             >
               {item.name}
@@ -95,7 +95,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden bg-dark-light/95 backdrop-blur-md px-6 py-4"
+          className="md:hidden bg-gray-950-light/95 backdrop-blur-md px-6 py-4"
         >
           <div className="flex flex-col space-y-4">
             {navItems.map((item, index) => (

@@ -39,8 +39,8 @@ const Hero = () => {
               <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
                 Hi, I am <span className="text-primary">Mighty</span>
               </h1>
-              <h2 className="text-2xl md:text-4xl font-display font-semibold mb-6 text-gray-300">
-                Full Stack Developer
+              <h2 className="text-2xl md:text-4xl font-display font-semibold mb-6 text-gray-600">
+                Web Developer
               </h2>
               <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-lg">
                 I build exceptional digital experiences with modern technologies.
@@ -50,7 +50,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 <motion.a
                   href="#projects"
-                  className="px-8 py-3 bg-gradient-to-r from-primary to-accent rounded-lg text-white font-medium hover:shadow-lg transition-all flex items-center"
+                  className="px-8 py-3 text-blue-950 bg-gradient-to-r from-primary to-accent rounded-lg  font-medium hover:shadow-lg transition-all flex items-center"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -58,7 +58,7 @@ const Hero = () => {
                 </motion.a>
                 <motion.a
                   href="#contact"
-                  className="px-8 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-primary/10 transition-all flex items-center"
+                  className="px-8 py-3 border border-primary text-blue-950 hover:bg-blue-950 hover:text-white   rounded-lg font-medium hover:bg-primary/10 transition-all flex items-center"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -77,7 +77,7 @@ const Hero = () => {
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl animate-pulse"></div>
-              <div className="relative w-full h-full bg-dark-light rounded-full overflow-hidden border-4 border-primary/30">
+              <div className="relative w-full h-full bg-gray-950-light rounded-full overflow-hidden border-4 border-primary/30">
                 <img
                   src="/images/me.jpg" // Replace with your image
                   alt="Mighty Popoola"

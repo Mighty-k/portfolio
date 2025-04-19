@@ -42,7 +42,7 @@ const Skills = () => {
       }
 
   return (
-    <section id="skills" className="py-20 bg-dark">
+    <section id="skills" className="py-20 bg-gray-950">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -65,7 +65,7 @@ const Skills = () => {
           {Object.entries(skills).map(([category, items]) => (
             <motion.div
               key={category}
-              className="bg-dark-light rounded-xl p-6 border border-gray-800 hover:border-primary/50 transition-all"
+              className="bg-gray-950-light rounded-xl p-6 border border-gray-800 hover:border-primary/50 transition-all"
             >
               <div className="flex items-center mb-6">
                 <div className="p-3 rounded-lg bg-primary/10 text-primary mr-4">

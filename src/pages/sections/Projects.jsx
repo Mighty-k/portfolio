@@ -53,7 +53,7 @@ const Projects = () => {
     : projects.filter(project => project.tags.includes(activeFilter))
 
   return (
-    <section id="projects" className="py-20 bg-dark-light">
+    <section id="projects" className="py-20 bg-gray-950-light">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -104,7 +104,7 @@ const Projects = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="bg-dark rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition-all group"
+              className="bg-gray-950 rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition-all group"
             >
               <div className="relative overflow-hidden h-48">
                 <img
@@ -119,7 +119,7 @@ const Projects = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-dark rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                        className="w-10 h-10 bg-gray-950 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
                         aria-label="GitHub"
                       >
                         <FiGithub className="text-xl" />
@@ -130,7 +130,7 @@ const Projects = () => {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-dark rounded-full flex items-center justify-center hover:bg-primary transition-colors"
+                        className="w-10 h-10 bg-gray-950 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
                         aria-label="Live Demo"
                       >
                         <FiExternalLink className="text-xl" />
@@ -146,7 +146,7 @@ const Projects = () => {
                   {project.tags.map(tag => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-dark-light rounded-full text-xs text-gray-300"
+                      className="px-3 py-1 bg-gray-950-light rounded-full text-xs text-gray-300"
                     >
                       {tag}
                     </span>

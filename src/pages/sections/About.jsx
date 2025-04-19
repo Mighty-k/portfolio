@@ -33,7 +33,7 @@ const About = () => {
   ]
 
   return (
-    <section id="about" className="py-20 bg-dark-light">
+    <section id="about" className="py-20 bg-gray-950-light">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -70,12 +70,12 @@ const About = () => {
             </p>
         
 
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-3   gap-4">
               {stats.map((stat, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ y: -5 }}
-                  className="bg-dark rounded-lg p-4 text-center border border-gray-800"
+                  className="bg-gray-950  rounded-lg p-4 text-center border border-gray-800"
                 >
                   <div className="text-primary mb-2 flex justify-center">
                     {stat.icon}
@@ -114,7 +114,7 @@ const About = () => {
                   {/* Timeline dot */}
                   <div className="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary border-4 border-dark-light z-10"></div>
                   
-                  <div className="bg-dark rounded-lg p-6 border border-gray-800 hover:border-primary/50 transition-all">
+                  <div className="bg-gray-950 rounded-lg p-6 border border-gray-800 hover:border-primary/50 transition-all">
                     <span className="text-primary font-medium">{item.year}</span>
                     <h4 className="text-xl font-semibold mt-1 mb-2">{item.title}</h4>
                     <p className="text-gray-400">{item.description}</p>
