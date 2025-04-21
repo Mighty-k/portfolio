@@ -46,7 +46,7 @@ const About = () => {
             About <span className="text-primary">Me</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
-          <p className="text-gray-800 max-w-3xl mx-auto">
+          <p className="text-gray-400 max-w-3xl mx-auto">
             I am a passionate web developer with expertise in creating modern web applications.
             My journey in tech has been driven by curiosity and a love for solving complex problems.
           </p>
@@ -64,7 +64,7 @@ const About = () => {
             <h3 className="text-2xl font-display font-semibold mb-6">
               Who am I?
             </h3>
-            <p className="text-gray-800 mb-6">
+            <p className="text-gray-400 mb-6">
               I am Mighty Popoola, a web developer specializing in JavaScript technologies.
               I create fast, responsive, and accessible web applications with clean, maintainable code.
             </p>

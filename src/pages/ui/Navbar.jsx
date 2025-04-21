@@ -41,7 +41,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.a
           href="#"
-          className="text-2xl font-display text-blue-950 font-bold bg-gradient-to-r from-primary to-accent bg-clip-text "
+          className="text-2xl font-display text-blue-200 font-bold bg-gradient-to-r from-primary to-accent bg-clip-text "
           whileHover={{ scale: 1.05 }}
         >
           Mighty
@@ -53,7 +53,7 @@ const Navbar = () => {
             <motion.a
               key={index}
               href={item.href}
-              className=" text-blue-950 hover:text-white transition-colors relative group"
+              className=" text-blue-200 hover:text-white transition-colors relative group"
               whileHover={{ scale: 1.05 }}
             >
               {item.name}

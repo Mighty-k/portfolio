@@ -25,7 +25,7 @@ const Landing = () => {
   }
 
   return (
-    <div className=' bg-indigo-200'>
+    <div className=' bg-gray-900'>
       <Navbar />
       <main className="overflow-hidden">
         <Hero />

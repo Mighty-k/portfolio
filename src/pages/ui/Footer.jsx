@@ -16,11 +16,11 @@ const Footer = () => {
           >
             <a
               href="#"
-              className="text-2xl font-display font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-blue-950"
+              className="text-2xl font-display font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-blue-200"
             >
               Mighty
             </a>
-            <p className="text-gray-800 mt-2">
+            <p className="text-gray-400 mt-2">
               Creating digital experiences that matter
             </p>
           </motion.div>
@@ -36,7 +36,7 @@ const Footer = () => {
               href="https://github.com/Mighty-k"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-800 hover:text-primary transition-colors"
+              className="text-gray-400 hover:text-primary transition-colors"
               aria-label="GitHub"
             >
               <FiGithub className="text-xl" />
@@ -45,7 +45,7 @@ const Footer = () => {
               href="https://linkedin.com/in/mighty-popoola"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-800 hover:text-primary transition-colors"
+              className="text-gray-400 hover:text-primary transition-colors"
               aria-label="LinkedIn"
             >
               <FiLinkedin className="text-xl" />
@@ -54,14 +54,14 @@ const Footer = () => {
               href="https://twitter.com/mighty_dev"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-800 hover:text-primary transition-colors"
+              className="text-gray-400 hover:text-primary transition-colors"
               aria-label="Twitter"
             >
               <FiTwitter className="text-xl" />
             </a>
             <a
               href="mailto:tiolupopo@gmail.com"
-              className="text-gray-800 hover:text-primary transition-colors"
+              className="text-gray-400 hover:text-primary transition-colors"
               aria-label="Email"
             >
               <FiMail className="text-xl" />

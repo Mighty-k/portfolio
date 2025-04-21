@@ -66,7 +66,7 @@ const Projects = () => {
             My <span className="text-primary">Projects</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
-          <p className="text-gray-800 max-w-3xl mx-auto">
+          <p className="text-gray-400 max-w-3xl mx-auto">
             Here are some of my recent projects. Each one was built to solve a specific problem
             or to explore new technologies.
           </p>
@@ -112,7 +112,7 @@ const Projects = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent max-sm:opacity-100  opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <div className="flex space-x-4">
                     {project.github && (
                       <a

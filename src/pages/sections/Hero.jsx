@@ -39,10 +39,10 @@ const Hero = () => {
               <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
                 Hi, I am <span className="text-primary">Mighty</span>
               </h1>
-              <h2 className="text-2xl md:text-4xl font-display font-semibold mb-6 text-gray-600">
+              <h2 className="text-2xl md:text-4xl font-display font-semibold mb-6 text-gray-300">
                 Web Developer
               </h2>
-              <p className="text-lg md:text-xl text-gray-800 mb-8 max-w-lg">
+              <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-lg">
                 I build exceptional digital experiences with modern technologies.
                 Focused on creating clean, efficient, and user-friendly applications.
               </p>
@@ -50,7 +50,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 <motion.a
                   href="#projects"
-                  className="px-8 py-3 text-blue-950 bg-gradient-to-r from-primary to-accent rounded-lg  font-medium hover:shadow-lg transition-all flex items-center"
+                  className="px-8 py-3 text-blue-200 bg-gradient-to-r from-primary to-accent rounded-lg  font-medium hover:shadow-lg transition-all flex items-center"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -58,7 +58,7 @@ const Hero = () => {
                 </motion.a>
                 <motion.a
                   href="#contact"
-                  className="px-8 py-3 border border-primary text-blue-950 hover:bg-blue-950 hover:text-white   rounded-lg font-medium hover:bg-primary/10 transition-all flex items-center"
+                  className="px-8 py-3 border border-primary text-blue-200 hover:bg-blue-200 hover:text-blue-900   rounded-lg font-medium hover:bg-primary/10 transition-all flex items-center"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -101,7 +101,7 @@ const Hero = () => {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-800 hover:text-primary transition-colors"
+              className="text-gray-400 hover:text-primary transition-colors"
               whileHover={{ y: -5 }}
               aria-label={link.name}
             >
@@ -118,7 +118,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
         >
-          <a href="#about" className="flex flex-col items-center text-gray-800 hover:text-primary transition-colors">
+          <a href="#about" className="flex flex-col items-center text-gray-400 hover:text-primary transition-colors">
             <span className="mb-2">Scroll Down</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
