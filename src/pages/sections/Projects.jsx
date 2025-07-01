@@ -7,14 +7,14 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all')
   
   const projects = [
-    {
+     {
       id: 1,
-      title: 'FYCL Clearance System',
-      description: 'A comprehensive clearance system for university graduates with automated workflows',
-      tags: ['react', 'express', 'mongodb'],
-      image: '/images/clearance.png',
-      github: 'https://github.com/Mighty-k/clearance-system',
-      live: 'https://fycl.netlify.app'
+      title: 'Movie-Explorer',
+      description: 'A sleek movie discovery app built with React, TypeScript, and Tailwind CSS, powered by the TMDb API. Users can search for movies, view detailed information such as ratings, cast, trailers, and genres, and explore trending or popular titles',
+      tags:  ['react', 'tailwind', 'typescript'],
+      image: '/images/movies.png',
+      github: 'https://github.com/Mighty-k/movie-explorer',
+      live: 'https://movie-explorer-psi.vercel.app/'
     },
     {
       id: 2,
@@ -34,6 +34,7 @@ const Projects = () => {
       github: 'https://github.com/Mighty-k/portfolio',
       live: 'https://mighty-dev.netlify.app'
     },
+   
     {
       id: 4,
       title: 'Notes App',
@@ -43,10 +44,19 @@ const Projects = () => {
       github: 'https://github.com/Mighty-k/notesApp',
       live: 'https://notes-lazydev.vercel.app/'
     },
+      {
+      id: 5,
+      title: 'FYCL Clearance System',
+      description: 'A comprehensive clearance system for university graduates with automated workflows',
+      tags: ['react', 'express', 'mongodb'],
+      image: '/images/clearance.png',
+      github: 'https://github.com/Mighty-k/clearance-system',
+      live: 'https://fycl.netlify.app'
+    },
 
   ]
 
-  const filters = ['all', 'react', 'express', 'HTML', 'mongodb']
+  const filters = ['all', 'react', 'express', 'HTML', 'mongodb', 'tailwind', 'typescript']
 
   const filteredProjects = activeFilter === 'all' 
     ? projects 

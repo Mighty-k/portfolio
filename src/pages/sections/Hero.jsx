@@ -79,7 +79,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl animate-pulse"></div>
               <div className="relative w-full h-full bg-gray-950-light rounded-full overflow-hidden border-4 border-primary/30">
                 <img
-                  src="/images/me.jpg" // Replace with your image
+                  src="/images/me.png" // Replace with your image
                   alt="Mighty Popoola"
                   className="w-full h-full object-cover"
                 />
