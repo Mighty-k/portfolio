@@ -4,7 +4,7 @@ import { FiAward /*, FiCode, FiUsers*/ } from 'react-icons/fi'
 
 const About = () => {
   const stats = [
-    { icon: <FiAward className="text-2xl" />, value: '2+', label: 'Years Experience' },
+    { icon: <FiAward className="text-2xl" />, value: '3+', label: 'Years Experience' },
     // { icon: <FiCode className="text-2xl" />, value: '50+', label: 'Projects Completed' },
     // { icon: <FiUsers className="text-2xl" />, value: '30+', label: 'Happy Clients' },
   ]
