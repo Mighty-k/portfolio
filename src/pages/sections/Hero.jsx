@@ -1,32 +1,35 @@
 // components/sections/Hero.jsx
-import { motion } from 'framer-motion'
-import Particles from '../ui/Particles'
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
-import { FaArrowDown } from 'react-icons/fa'
+import { motion } from "framer-motion";
+import Particles from "../ui/Particles";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { FaArrowDown } from "react-icons/fa";
 // import me from '/images/me.jpj'
 const Hero = () => {
   const socialLinks = [
     {
       icon: <FiGithub className="text-xl" />,
-      url: 'https://github.com/Mighty-k',
-      name: 'GitHub'
+      url: "https://github.com/Mighty-k",
+      name: "GitHub",
     },
     {
       icon: <FiLinkedin className="text-xl" />,
-      url: 'https://linkedin.com/in/mighty-popoola',
-      name: 'LinkedIn'
+      url: "https://linkedin.com/in/mighty-popoola",
+      name: "LinkedIn",
     },
     {
       icon: <FiMail className="text-xl" />,
-      url: 'mailto:tiolupopo@gmail.com',
-      name: 'Email'
-    }
-  ]
+      url: "mailto:tiolupopo@gmail.com",
+      name: "Email",
+    },
+  ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       <Particles />
-      
+
       <div className="container mx-auto px-6 z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between">
           {/* Left Content */}
@@ -43,10 +46,11 @@ const Hero = () => {
                 Web Developer
               </h2>
               <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-lg">
-                I build exceptional digital experiences with modern technologies.
-                Focused on creating clean, efficient, and user-friendly applications.
+                Frontend Engineer specializing in React & TypeScript I build
+                high-performance, scalable web applications with clean
+                architecture, modern UI systems, and seamless user experiences.
               </p>
-              
+
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
                 <motion.a
                   href="#projects"
@@ -67,7 +71,7 @@ const Hero = () => {
               </div>
             </motion.div>
           </div>
-          
+
           {/* Right Content */}
           <motion.div
             className="lg:w-1/2 flex justify-center"
@@ -87,7 +91,7 @@ const Hero = () => {
             </div>
           </motion.div>
         </div>
-        
+
         {/* Social Links */}
         <motion.div
           className="fixed left-6 bottom-6 hidden lg:flex flex-col space-y-4 items-center"
@@ -110,7 +114,7 @@ const Hero = () => {
           ))}
           <div className="w-px h-16 bg-gray-600"></div>
         </motion.div>
-        
+
         {/* Scroll Down Indicator */}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
@@ -118,7 +122,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
         >
-          <a href="#about" className="flex flex-col items-center text-gray-400 hover:text-primary transition-colors">
+          <a
+            href="#about"
+            className="flex flex-col items-center text-gray-400 hover:text-primary transition-colors"
+          >
             <span className="mb-2">Scroll Down</span>
             <motion.div
               animate={{ y: [0, 10, 0] }}
@@ -130,7 +137,7 @@ const Hero = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

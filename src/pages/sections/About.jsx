@@ -1,36 +1,50 @@
 // components/sections/About.jsx
-import { motion } from 'framer-motion'
-import { FiAward /*, FiCode, FiUsers*/ } from 'react-icons/fi'
+import { motion } from "framer-motion";
+import { FiAward /*, FiCode, FiUsers*/ } from "react-icons/fi";
 
 const About = () => {
   const stats = [
-    { icon: <FiAward className="text-2xl" />, value: '3+', label: 'Years Experience' },
+    {
+      icon: <FiAward className="text-2xl" />,
+      value: "2+",
+      label: "Years Experience",
+    },
     // { icon: <FiCode className="text-2xl" />, value: '50+', label: 'Projects Completed' },
     // { icon: <FiUsers className="text-2xl" />, value: '30+', label: 'Happy Clients' },
-  ]
+  ];
 
   const timeline = [
     {
-      year: '2021',
-      title: 'Started Coding Journey',
-      description: 'Began learning web development fundamentals with HTML, CSS, and JavaScript'
+      year: "2021",
+      title: "Started Coding Journey",
+      description:
+        "Began learning web development fundamentals with HTML, CSS, and JavaScript",
     },
     {
-      year: '2022',
-      title: 'Frontend Specialization',
-      description: 'Mastered React.js and modern frontend development practices'
+      year: "2022",
+      title: "Frontend Specialization",
+      description:
+        "Mastered React.js and modern frontend development practices",
     },
     {
-      year: '2023',
-      title: 'Full Stack Development',
-      description: 'Expanded skills to include Node.js, Express, and database management'
+      year: "2023",
+      title: "Full Stack Development",
+      description:
+        "Expanded skills to include Node.js, Express, and database management",
     },
     {
-      year: '2024',
-      title: 'Professional Projects',
-      description: 'Started working on complex applications for clients and personal projects'
-    }
-  ]
+      year: "2024",
+      title: "Professional Projects",
+      description:
+        "Started working on complex applications for clients and personal projects",
+    },
+    {
+      year: "2025",
+      title: "Scaling & Professional Development",
+      description:
+        "Focused on building scalable systems, writing maintainable code, and delivering high-quality user experiences in production environments",
+    },
+  ];
 
   return (
     <section id="about" className="py-20 bg-gray-950-light">
@@ -47,8 +61,12 @@ const About = () => {
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            I am a passionate web developer with expertise in creating modern web applications.
-            My journey in tech has been driven by curiosity and a love for solving complex problems.
+            I am a frontend engineer specializing in React and TypeScript,
+            focused on building scalable, high-performance web applications. I
+            enjoy translating complex problems into clean, intuitive user
+            experiences and writing maintainable, production-ready code. My work
+            is driven by a strong attention to detail, performance optimization,
+            and modern frontend architecture.
           </p>
         </motion.div>
 
@@ -65,10 +83,13 @@ const About = () => {
               Who am I?
             </h3>
             <p className="text-gray-400 mb-6">
-              I am Mighty Popoola, a web developer specializing in JavaScript technologies.
-              I create fast, responsive, and accessible web applications with clean, maintainable code.
+              I am Mighty Popoola, a frontend engineer with 2+ years of
+              experience building modern web applications. I specialize in
+              JavaScript and TypeScript ecosystems, creating fast, responsive,
+              and accessible interfaces. I have hands-on experience working on
+              real-world applications, integrating APIs, and collaborating with
+              teams to deliver high-quality products.
             </p>
-        
 
             <div className="grid grid-cols-3   gap-4">
               {stats.map((stat, index) => (
@@ -101,7 +122,7 @@ const About = () => {
             <div className="relative">
               {/* Timeline line */}
               <div className="absolute left-5 top-0 h-full w-0.5 bg-gray-700"></div>
-              
+
               {timeline.map((item, index) => (
                 <motion.div
                   key={index}
@@ -113,10 +134,14 @@ const About = () => {
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-0 top-0 w-4 h-4 rounded-full bg-primary border-4 border-dark-light z-10"></div>
-                  
+
                   <div className="bg-gray-950 rounded-lg p-6 border border-gray-800 hover:border-primary/50 transition-all">
-                    <span className="text-primary font-medium">{item.year}</span>
-                    <h4 className="text-xl font-semibold mt-1 mb-2">{item.title}</h4>
+                    <span className="text-primary font-medium">
+                      {item.year}
+                    </span>
+                    <h4 className="text-xl font-semibold mt-1 mb-2">
+                      {item.title}
+                    </h4>
                     <p className="text-gray-400">{item.description}</p>
                   </div>
                 </motion.div>
@@ -126,7 +151,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;
