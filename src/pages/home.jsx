@@ -1,31 +1,30 @@
-
-import { useState, useEffect } from 'react'
-import Hero from './sections/Hero'
-import About from './sections/About'
-import Skills from './sections/Skills'
-import Projects from './sections/Projects'
-import Contact from './sections/Contact'
-import Navbar from './ui/Navbar'
-import Footer from './ui/Footer'
-import Loader from './ui/Loader'
+import { useState, useEffect } from "react";
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import Contact from "./sections/Contact";
+import Navbar from "./ui/Navbar";
+import Footer from "./ui/Footer";
+import Loader from "./ui/Loader";
 
 const Landing = () => {
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
+      setIsLoading(false);
+    }, 2000);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   if (isLoading) {
-    return <Loader />
+    return <Loader />;
   }
 
   return (
-    <div className=' bg-gray-900'>
+    <div style={{ backgroundColor: "#fdf8f3" }}>
       <Navbar />
       <main className="overflow-hidden">
         <Hero />
@@ -36,7 +35,7 @@ const Landing = () => {
       </main>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Landing
+export default Landing;

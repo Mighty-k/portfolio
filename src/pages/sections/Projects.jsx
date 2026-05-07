@@ -87,22 +87,33 @@ const Projects = () => {
       : projects.filter((project) => project.tags.includes(activeFilter));
 
   return (
-    <section id="projects" className="py-20 bg-gray-950-light">
-      <div className="container mx-auto px-6">
+    <section
+      id="projects"
+      className="py-24 px-6"
+      style={{ backgroundColor: "#fdf8f3" }}
+    >
+      <div className="container mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            My <span className="text-primary">Projects</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
-          <p className="text-gray-400 max-w-3xl mx-auto">
-            Here are some of my recent projects. Each one was built to solve a
-            specific problem or to explore new technologies.
+          <div className="flex items-end gap-4 mb-6">
+            <h2
+              className="text-5xl md:text-6xl font-serif font-bold"
+              style={{ color: "#2d2d2d" }}
+            >
+              My <span style={{ color: "#6b8e6f" }}>Projects</span>
+            </h2>
+            {/* <div className="accent-line mb-3" /> */}
+          </div>
+          <p className="text-xl max-w-3xl" style={{ color: "#a0a0a0" }}>
+            A curated selection of work showcasing web development expertise,
+            from full-stack e-commerce platforms to real-time interactive
+            applications. Each project demonstrates attention to performance,
+            user experience, and modern development practices.
           </p>
         </motion.div>
 
@@ -112,20 +123,27 @@ const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap justify-center gap-2 mb-16"
         >
           {filters.map((filter) => (
-            <button
+            <motion.button
               key={filter}
               onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 rounded-full text-sm font-medium capitalize transition-all ${
+              className="px-5 py-2 rounded-full text-sm font-medium capitalize transition-all"
+              style={
                 activeFilter === filter
-                  ? "bg-primary text-white"
-                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
-              }`}
+                  ? { backgroundColor: "#6b8e6f", color: "#fdf8f3" }
+                  : {
+                      border: "1px solid #a0a0a0",
+                      color: "#2d2d2d",
+                      backgroundColor: "transparent",
+                    }
+              }
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.95 }}
             >
               {filter}
-            </button>
+            </motion.button>
           ))}
         </motion.div>
 
@@ -134,57 +152,94 @@ const Projects = () => {
           {filteredProjects.map((project, index) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: index * 0.08 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="bg-gray-950 rounded-xl overflow-hidden border border-gray-800 hover:border-primary/50 transition-all group"
+              className="card overflow-hidden group h-full flex flex-col"
             >
-              <div className="relative overflow-hidden h-48">
+              <div className="relative overflow-hidden h-56 bg-gray-200">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent max-sm:opacity-100  opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <div className="flex space-x-4">
-                    {project.github && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-950 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                        aria-label="GitHub"
-                      >
-                        <FiGithub className="text-xl" />
-                      </a>
-                    )}
-                    {project.live && (
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 bg-gray-950 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                        aria-label="Live Demo"
-                      >
-                        <FiExternalLink className="text-xl" />
-                      </a>
-                    )}
-                  </div>
-                </div>
+                <motion.div
+                  className="absolute inset-0"
+                  style={{ backgroundColor: "rgba(45,45,45,0)" }}
+                  whileHover={{ backgroundColor: "rgba(45,45,45,0.15)" }}
+                  transition={{ duration: 0.3 }}
+                />
+                {/* Accent bar on hover */}
+                <motion.div
+                  className="absolute bottom-0 left-0 w-1 h-0"
+                  style={{ backgroundColor: "#6b8e6f" }}
+                  whileHover={{ height: "100%" }}
+                  transition={{ duration: 0.3 }}
+                />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
+
+              <div className="p-6 flex-1 flex flex-col">
+                <h3
+                  className="text-xl font-serif font-bold mb-2"
+                  style={{ color: "#2d2d2d" }}
+                >
+                  {project.title}
+                </h3>
+                <p className="text-sm mb-4 flex-1" style={{ color: "#a0a0a0" }}>
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tags.slice(0, 2).map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1 bg-gray-950-light rounded-full text-xs text-gray-300"
+                      className="px-3 py-1 rounded-full text-xs font-medium"
+                      style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
                     >
                       {tag}
                     </span>
                   ))}
+                  {project.tags.length > 2 && (
+                    <span
+                      className="px-3 py-1 rounded-full text-xs font-medium"
+                      style={{ color: "#a0a0a0" }}
+                    >
+                      +{project.tags.length - 2}
+                    </span>
+                  )}
+                </div>
+
+                {/* CTA Links */}
+                <div
+                  className="flex gap-3 pt-4 border-t"
+                  style={{ borderColor: "#a0a0a0", borderOpacity: 0.2 }}
+                >
+                  {project.github && (
+                    <motion.a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-medium flex-1 justify-center py-2 transition-all"
+                      style={{ color: "#6b8e6f" }}
+                      whileHover={{ y: -2 }}
+                    >
+                      <FiGithub className="text-lg" />
+                      Code
+                    </motion.a>
+                  )}
+                  {project.live && (
+                    <motion.a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-sm font-medium flex-1 justify-center py-2 transition-all"
+                      style={{ color: "#6b8e6f" }}
+                      whileHover={{ y: -2 }}
+                    >
+                      <FiExternalLink className="text-lg" />
+                      Live
+                    </motion.a>
+                  )}
                 </div>
               </div>
             </motion.div>

@@ -1,63 +1,82 @@
 // components/sections/Skills.jsx
-import { motion } from 'framer-motion'
-import { FiCode, FiDatabase, FiTool } from 'react-icons/fi'
-import { 
-    FaHtml5, 
-    FaCss3Alt, 
-    FaJs, 
-    FaReact, 
-    FaNodeJs,
-    FaGitAlt,
-    FaFigma
-  } from 'react-icons/fa';
-  import { 
-    SiTypescript, 
-    SiExpress, 
-    SiMongodb,
-    SiPostman,
-  } from 'react-icons/si';
-  import { VscVscode } from "react-icons/vsc";
+import { motion } from "framer-motion";
+import { FiCode, FiDatabase, FiTool } from "react-icons/fi";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaFigma,
+} from "react-icons/fa";
+import { SiTypescript, SiExpress, SiMongodb, SiPostman } from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 
 const Skills = () => {
-    const skills = {
-        frontend: [
-          { name: 'HTML5', icon: <FaHtml5 className="text-orange-500" /> },
-          { name: 'CSS3/Tailwind', icon: <FaCss3Alt className="text-blue-500" /> },
-          { name: 'JavaScript', icon: <FaJs className="text-yellow-400" /> },
-          { name: 'React.js', icon: <FaReact className="text-blue-400" /> },
-          { name: 'TypeScript', icon: <SiTypescript className="text-blue-600" /> },
-        ],
-        backend: [
-          { name: 'Node.js', icon: <FaNodeJs className="text-green-500" /> },
-          { name: 'Express.js', icon: <SiExpress className="text-gray-400" /> },
-          { name: 'REST APIs', icon: <div className="text-purple-500">API</div> },
-          { name: 'MongoDB', icon: <SiMongodb className="text-green-600" /> },
-        ],
-        tools: [
-          { name: 'Git/GitHub', icon: <FaGitAlt className="text-orange-600" /> },
-          { name: 'VS Code', icon: <VscVscode className="text-blue-500" /> },
-          { name: 'Figma', icon: <FaFigma className="text-purple-500" /> },
-          { name: 'Postman', icon: <SiPostman className="text-orange-400" /> },
-        ]
-      }
+  const skills = {
+    frontend: [
+      { name: "HTML5", icon: <FaHtml5 className="text-2xl" /> },
+      { name: "CSS3/Tailwind", icon: <FaCss3Alt className="text-2xl" /> },
+      { name: "JavaScript", icon: <FaJs className="text-2xl" /> },
+      { name: "React.js", icon: <FaReact className="text-2xl" /> },
+      { name: "TypeScript", icon: <SiTypescript className="text-2xl" /> },
+    ],
+    backend: [
+      { name: "Node.js", icon: <FaNodeJs className="text-2xl" /> },
+      { name: "Express.js", icon: <SiExpress className="text-2xl" /> },
+      { name: "REST APIs", icon: <div className="text-2xl">API</div> },
+      { name: "MongoDB", icon: <SiMongodb className="text-2xl" /> },
+    ],
+    tools: [
+      { name: "Git/GitHub", icon: <FaGitAlt className="text-2xl" /> },
+      { name: "VS Code", icon: <VscVscode className="text-2xl" /> },
+      { name: "Figma", icon: <FaFigma className="text-2xl" /> },
+      { name: "Postman", icon: <SiPostman className="text-2xl" /> },
+    ],
+  };
+
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    show: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
 
   return (
-    <section id="skills" className="py-20 bg-gray-950">
-      <div className="container mx-auto px-6">
+    <section
+      id="skills"
+      className="py-24 px-6"
+      style={{ backgroundColor: "#fdf8f3" }}
+    >
+      <div className="container mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            My <span className="text-primary">Skills</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
-          <p className="text-gray-400 max-w-3xl mx-auto">
-            I have worked with a variety of technologies in the web development world.
-            Here are the tools and technologies I am most proficient with.
+          <div className="flex items-end gap-4 mb-6">
+            <h2
+              className="text-5xl md:text-6xl font-serif font-bold"
+              style={{ color: "#2d2d2d" }}
+            >
+              My <span style={{ color: "#6b8e6f" }}>Skills</span>
+            </h2>
+            {/* <div className="accent-line mb-3" /> */}
+          </div>
+          <p className="text-xl max-w-3xl" style={{ color: "#a0a0a0" }}>
+            Proficient across modern web technologies. I bring expertise in
+            frontend frameworks, backend systems, and development tools to build
+            scalable, maintainable applications.
           </p>
         </motion.div>
 
@@ -65,32 +84,64 @@ const Skills = () => {
           {Object.entries(skills).map(([category, items]) => (
             <motion.div
               key={category}
-              className="bg-gray-950-light rounded-xl p-6 border border-gray-800 hover:border-primary/50 transition-all"
+              className="card p-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
-              <div className="flex items-center mb-6">
-                <div className="p-3 rounded-lg bg-primary/10 text-primary mr-4">
-                  {category === 'frontend' ? <FiCode /> : 
-                   category === 'backend' ? <FiDatabase /> : <FiTool />}
+              <div className="flex items-center mb-8">
+                <div
+                  className="w-12 h-12 rounded-lg flex items-center justify-center mr-4 text-2xl"
+                  style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
+                >
+                  {category === "frontend" ? (
+                    <FiCode />
+                  ) : category === "backend" ? (
+                    <FiDatabase />
+                  ) : (
+                    <FiTool />
+                  )}
                 </div>
-                <h3 className="text-xl font-poppins font-semibold capitalize">
+                <h3
+                  className="text-2xl font-serif font-bold capitalize"
+                  style={{ color: "#2d2d2d" }}
+                >
                   {category}
                 </h3>
               </div>
-              
-              <div className="space-y-4">
+
+              <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="space-y-3"
+              >
                 {items.map((skill, index) => (
-                  <div key={index} className="flex items-center mb-1">
-                    <span className="mr-2">{skill.icon}</span>
-                    <span className="text-gray-300 flex-1">{skill.name}</span>
-                  </div>
+                  <motion.div
+                    key={index}
+                    variants={itemVariants}
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-black/3 transition-colors group cursor-default"
+                  >
+                    <div
+                      style={{ color: "#6b8e6f" }}
+                      className="group-hover:scale-110 transition-transform"
+                    >
+                      {skill.icon}
+                    </div>
+                    <span className="font-medium" style={{ color: "#2d2d2d" }}>
+                      {skill.name}
+                    </span>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

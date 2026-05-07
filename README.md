@@ -22,3 +22,17 @@ npm run build
 ```
 
 The optimized files are emitted in the build output directory.
+
+---
+
+Restructure summary
+
+- Updated Tailwind configuration with design tokens (colors, fonts, container).
+- Rewrote global styles in `src/main.css` to enable Tailwind base/components/utilities, add CSS tokens, and respect `prefers-reduced-motion`.
+- Added SEO/meta tags and font preconnect in `index.html`.
+- Switched app root to use design tokens in `src/App.jsx`.
+
+Next steps
+
+- Run `npm install` and `npm run dev` to preview locally.
+- I can continue by polishing components, adding accessible form handling, and optimizing images — tell me which area to prioritize next.

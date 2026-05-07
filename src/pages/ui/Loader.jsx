@@ -1,50 +1,32 @@
 // components/ui/Loader.jsx
-import { motion } from 'framer-motion'
-
-const dotVariants = {
-  animate: i => ({
-    scale: [1, 0.5, 1],
-    opacity: [1, 0.7, 1],
-    transition: {
-      scale: {
-        repeat: Infinity,
-        repeatType: "loop",
-        duration: 0.8,
-        delay: i * 0.2,
-        ease: "easeInOut"
-      },
-      opacity: {
-        repeat: Infinity,
-        repeatType: "loop",
-        duration: 0.8,
-        delay: i * 0.2,
-        ease: "easeInOut"
-      }
-    }
-  })
-}
+import { motion } from "framer-motion";
 
 const Loader = () => {
   return (
-    <div className="fixed inset-0 bg-gray-950 z-50 flex items-center justify-center">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center"
+      style={{ backgroundColor: "#fdf8f3" }}
+      aria-hidden="true"
+    >
       <div className="flex items-end justify-center space-x-3">
-        {[0, 1, 2].map(i => (
+        {[0, 1, 2].map((i) => (
           <motion.span
             key={i}
-            className={`w-5 h-5 rounded-full bg-gradient-to-t ${
-              i % 2 === 0
-                ? "from-blue-500 to-purple-500"
-                : "from-purple-500 to-blue-500"
-            }`}
-            custom={i}
-            variants={dotVariants}
-            initial="animate"
-            animate="animate"
+            className="w-4 h-4 rounded-full"
+            style={{ backgroundColor: "#6b8e6f" }}
+            animate={{ scale: [1, 0.6, 1], opacity: [1, 0.6, 1] }}
+            transition={{
+              duration: 0.8,
+              delay: i * 0.15,
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut",
+            }}
           />
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Loader
+export default Loader;

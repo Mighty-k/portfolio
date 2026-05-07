@@ -1,23 +1,21 @@
 // components/sections/Hero.jsx
 import { motion } from "framer-motion";
-import Particles from "../ui/Particles";
-import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
-import { FaArrowDown } from "react-icons/fa";
-// import me from '/images/me.jpj'
+import { FiGithub, FiLinkedin, FiMail, FiArrowDown } from "react-icons/fi";
+
 const Hero = () => {
   const socialLinks = [
     {
-      icon: <FiGithub className="text-xl" />,
+      icon: <FiGithub className="text-2xl" />,
       url: "https://github.com/Mighty-k",
       name: "GitHub",
     },
     {
-      icon: <FiLinkedin className="text-xl" />,
+      icon: <FiLinkedin className="text-2xl" />,
       url: "https://linkedin.com/in/mighty-popoola",
       name: "LinkedIn",
     },
     {
-      icon: <FiMail className="text-xl" />,
+      icon: <FiMail className="text-2xl" />,
       url: "mailto:tiolupopo@gmail.com",
       name: "Email",
     },
@@ -26,112 +24,197 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+      style={{ backgroundColor: "#fdf8f3" }}
     >
-      <Particles />
+      {/* Organic blob background (decorative) */}
+      <div className="absolute top-10 right-20 opacity-10 pointer-events-none">
+        <svg
+          viewBox="0 0 200 200"
+          width="300"
+          height="300"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="#6b8e6f"
+            d="M50,100 Q0,150 50,200 T150,200 Q200,150 150,100 T150,0 Q100,0 50,0 T50,100 Z"
+          />
+        </svg>
+      </div>
 
-      <div className="container mx-auto px-6 z-10">
-        <div className="flex flex-col lg:flex-row items-center justify-between">
+      {/* Wavy separator (subtle) */}
+      <svg
+        className="absolute top-0 left-0 w-full"
+        viewBox="0 0 1000 100"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+        opacity="0.04"
+      >
+        <path
+          d="M0,50 Q250,0 500,50 T1000,50 L1000,100 L0,100 Z"
+          fill="#6b8e6f"
+        />
+      </svg>
+
+      <div className="container mx-auto px-6 z-10 max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="lg:w-1/2 text-center lg:text-left mb-12 lg:mb-0">
+          <motion.div className="text-left">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
             >
-              <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-                Hi, I am <span className="text-primary">Mighty</span>
+              <p
+                className="text-sm font-medium tracking-widest uppercase mb-4"
+                style={{ color: "#6b8e6f" }}
+              >
+                Frontend Engineer
+              </p>
+              <h1
+                className="text-6xl md:text-7xl font-serif font-bold mb-6 leading-tight"
+                style={{ color: "#2d2d2d" }}
+              >
+                Hi, I&apos;m <span style={{ color: "#6b8e6f" }}>Mighty.</span>
               </h1>
-              <h2 className="text-2xl md:text-4xl font-display font-semibold mb-6 text-gray-300">
-                Web Developer
-              </h2>
-              <p className="text-lg md:text-xl text-gray-400 mb-8 max-w-lg">
-                Frontend Engineer specializing in React & TypeScript I build
-                high-performance, scalable web applications with clean
-                architecture, modern UI systems, and seamless user experiences.
+              <p
+                className="text-xl md:text-2xl font-light mb-8 max-w-lg leading-relaxed"
+                style={{ color: "#a0a0a0" }}
+              >
+                I build high-performance, scalable web applications with modern
+                architecture, thoughtful design, and seamless user experiences.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
                 <motion.a
                   href="#projects"
-                  className="px-8 py-3 text-blue-200 bg-gradient-to-r from-primary to-accent rounded-lg  font-medium hover:shadow-lg transition-all flex items-center"
-                  whileHover={{ scale: 1.05 }}
+                  className="btn-primary"
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   View My Work
                 </motion.a>
                 <motion.a
                   href="#contact"
-                  className="px-8 py-3 border border-primary text-blue-200 hover:bg-blue-200 hover:text-blue-900   rounded-lg font-medium hover:bg-primary/10 transition-all flex items-center"
+                  className="btn-secondary"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Contact Me
+                  Get In Touch
                 </motion.a>
               </div>
-            </motion.div>
-          </div>
 
-          {/* Right Content */}
+              {/* Social Links Row */}
+              <div className="flex items-center gap-6">
+                {socialLinks.map((link, index) => (
+                  <motion.a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors"
+                    style={{ color: "#a0a0a0" }}
+                    whileHover={{ color: "#6b8e6f", y: -3 }}
+                    aria-label={link.name}
+                  >
+                    {link.icon}
+                  </motion.a>
+                ))}
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Content - Organic Illustration */}
           <motion.div
-            className="lg:w-1/2 flex justify-center"
-            initial={{ opacity: 0, scale: 0.8 }}
+            className="flex justify-center lg:justify-end relative"
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full blur-xl animate-pulse"></div>
-              <div className="relative w-full h-full bg-gray-950-light rounded-full overflow-hidden border-4 border-primary/30">
-                <img
-                  src="/images/me.png" // Replace with your image
-                  alt="Mighty Popoola"
-                  className="w-full h-full object-cover"
+            <div className="relative w-96 h-96">
+              {/* Glowing orb background */}
+              <motion.div
+                className="absolute inset-0 rounded-full blur-3xl opacity-20"
+                style={{ backgroundColor: "#6b8e6f" }}
+                animate={{ y: [0, 20, 0], x: [0, 10, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 8,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Geometric accent */}
+              <svg
+                className="absolute inset-0 w-full h-full"
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="90"
+                  fill="none"
+                  stroke="#6b8e6f"
+                  strokeWidth="1"
+                  opacity="0.3"
                 />
+                <circle
+                  cx="100"
+                  cy="100"
+                  r="80"
+                  fill="none"
+                  stroke="#6b8e6f"
+                  strokeWidth="0.5"
+                  opacity="0.2"
+                />
+                <path
+                  d="M 100 20 Q 170 100 100 180 Q 30 100 100 20"
+                  fill="none"
+                  stroke="#6b8e6f"
+                  strokeWidth="1"
+                  opacity="0.15"
+                />
+              </svg>
+
+              {/* Profile Image */}
+              {/* Uncomment when ready to add profile image */}
+              {/* <img
+                src="/images/me.png"
+                alt="Mighty Popoola"
+                className="w-full h-full object-cover rounded-full shadow-xl"
+              /> */}
+
+              {/* Placeholder for now */}
+              <div
+                className="w-full h-full rounded-full flex items-center justify-center text-6xl font-serif font-bold"
+                style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
+              >
+                M
               </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Social Links */}
+        {/* Scroll Indicator */}
         <motion.div
-          className="fixed left-6 bottom-6 hidden lg:flex flex-col space-y-4 items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          {socialLinks.map((link, index) => (
-            <motion.a
-              key={index}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-primary transition-colors"
-              whileHover={{ y: -5 }}
-              aria-label={link.name}
-            >
-              {link.icon}
-            </motion.a>
-          ))}
-          <div className="w-px h-16 bg-gray-600"></div>
-        </motion.div>
-
-        {/* Scroll Down Indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block"
-          initial={{ opacity: 0, y: 20 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
         >
           <a
             href="#about"
-            className="flex flex-col items-center text-gray-400 hover:text-primary transition-colors"
+            className="flex flex-col items-center gap-2"
+            style={{ color: "#a0a0a0" }}
           >
-            <span className="mb-2">Scroll Down</span>
+            <span className="text-sm font-medium">Scroll</span>
             <motion.div
-              animate={{ y: [0, 10, 0] }}
+              animate={{ y: [0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 1.5 }}
             >
-              <FaArrowDown />
+              <FiArrowDown className="text-xl" />
             </motion.div>
           </a>
         </motion.div>

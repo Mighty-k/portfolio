@@ -1,153 +1,210 @@
 // components/sections/Contact.jsx
-import { motion } from 'framer-motion'
-import { useState } from 'react'
-import { FiMail, FiMapPin, FiPhone,FiGithub,FiLinkedin} from 'react-icons/fi'
+import { motion } from "framer-motion";
+import { useState } from "react";
+import {
+  FiMail,
+  FiMapPin,
+  FiPhone,
+  FiGithub,
+  FiLinkedin,
+} from "react-icons/fi";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
+    name: "",
+    email: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
+    const { name, value } = e.target;
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
-    }))
-  }
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData)
+    console.log("Form submitted:", formData);
     // Reset form
     setFormData({
-      name: '',
-      email: '',
-      message: ''
-    })
-  }
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
 
   return (
-    <section id="contact" className="py-20 bg-gray-950">
-      <div className="container mx-auto px-6">
+    <section
+      id="contact"
+      className="py-24 px-6"
+      style={{ backgroundColor: "#fdf8f3" }}
+    >
+      <div className="container mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-20"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Get In <span className="text-primary">Touch</span>
-          </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent mx-auto mb-6"></div>
-          <p className="text-gray-400 max-w-3xl mx-auto">
-            Have a project in mind or want to discuss potential opportunities?
-            Feel free to reach out - I would love to hear from you!
+          <div className="flex items-end gap-4 mb-6">
+            <h2
+              className="text-5xl md:text-6xl font-serif font-bold"
+              style={{ color: "#2d2d2d" }}
+            >
+              Get In <span style={{ color: "#6b8e6f" }}>Touch</span>
+            </h2>
+            {/* <div className="accent-line mb-3" /> */}
+          </div>
+          <p className="text-xl max-w-3xl" style={{ color: "#a0a0a0" }}>
+            I'm always open to new projects, collaborations, and conversations.
+            Feel free to reach out via email or social channels.
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Contact Info */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="lg:w-1/3"
+            className="space-y-8"
           >
-            <div className="bg-gray-950-light rounded-xl p-8 border border-gray-800 h-full">
-              <h3 className="text-2xl font-display font-semibold mb-6">
-                Contact Information
-              </h3>
-              
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary mr-4">
-                    <FiMail className="text-xl" />
-                  </div>
-                  <div>
-                    <h4 className="text-gray-300 font-medium mb-1">Email</h4>
-                    <a
-                      href="mailto:tiolupopo@gmail.com"
-                      className="text-gray-400 hover:text-primary transition-colors"
-                    >
-                      tiolupopo@gmail.com
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary mr-4">
-                    <FiPhone className="text-xl" />
-                  </div>
-                  <div>
-                    <h4 className="text-gray-300 font-medium mb-1">Phone</h4>
-                    <a
-                      href="tel:+2347042837826"
-                      className="text-gray-400 hover:text-primary transition-colors"
-                    >
-                      +234 704 283 7826
-                    </a>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="p-3 rounded-lg bg-primary/10 text-primary mr-4">
-                    <FiMapPin className="text-xl" />
-                  </div>
-                  <div>
-                    <h4 className="text-gray-300 font-medium mb-1">Location</h4>
-                    <p className="text-gray-400">Lagos, Nigeria</p>
-                  </div>
-                </div>
+            {/* Email */}
+            <div className="flex gap-4">
+              <div
+                className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
+              >
+                <FiMail className="text-2xl" />
               </div>
-              
-              <div className="mt-8 pt-8 border-t border-gray-800">
-                <h4 className="text-gray-300 font-medium mb-4">Follow Me</h4>
-                <div className="flex space-x-4">
-                  <a
-                    href="https://github.com/Mighty-k"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <FiGithub className="text-xl" />
-                  </a>
-                  <a
-                    href="https://linkedin.com/in/mighty-popoola"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-primary transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <FiLinkedin className="text-xl" />
-                  </a>
-                </div>
+              <div>
+                <h4
+                  className="font-serif font-bold mb-1"
+                  style={{ color: "#2d2d2d" }}
+                >
+                  Email
+                </h4>
+                <a
+                  href="mailto:tiolupopo@gmail.com"
+                  style={{ color: "#6b8e6f" }}
+                  className="hover:underline text-lg font-medium"
+                >
+                  tiolupopo@gmail.com
+                </a>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="flex gap-4">
+              <div
+                className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
+              >
+                <FiPhone className="text-2xl" />
+              </div>
+              <div>
+                <h4
+                  className="font-serif font-bold mb-1"
+                  style={{ color: "#2d2d2d" }}
+                >
+                  Phone
+                </h4>
+                <a
+                  href="tel:+2347042837826"
+                  style={{ color: "#6b8e6f" }}
+                  className="hover:underline text-lg font-medium"
+                >
+                  +234 704 283 7826
+                </a>
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="flex gap-4">
+              <div
+                className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
+                style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
+              >
+                <FiMapPin className="text-2xl" />
+              </div>
+              <div>
+                <h4
+                  className="font-serif font-bold mb-1"
+                  style={{ color: "#2d2d2d" }}
+                >
+                  Location
+                </h4>
+                <p style={{ color: "#a0a0a0" }} className="text-lg font-medium">
+                  Lagos, Nigeria
+                </p>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div
+              className="pt-8 border-t"
+              style={{ borderColor: "#a0a0a0", borderOpacity: 0.2 }}
+            >
+              <h4
+                className="font-serif font-bold mb-4"
+                style={{ color: "#2d2d2d" }}
+              >
+                Follow Me
+              </h4>
+              <div className="flex gap-4">
+                <motion.a
+                  href="https://github.com/Mighty-k"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-lg flex items-center justify-center text-xl transition-colors"
+                  style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
+                  whileHover={{ y: -4, scale: 1.1 }}
+                >
+                  <FiGithub />
+                </motion.a>
+                <motion.a
+                  href="https://linkedin.com/in/mighty-popoola"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-lg flex items-center justify-center text-xl transition-colors"
+                  style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
+                  whileHover={{ y: -4, scale: 1.1 }}
+                >
+                  <FiLinkedin />
+                </motion.a>
               </div>
             </div>
           </motion.div>
 
           {/* Contact Form */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="lg:w-2/3"
+            className="lg:col-span-2 card p-8"
           >
-            <form onSubmit={handleSubmit} className="bg-gray-950-light rounded-xl p-8 border border-gray-800">
-              <h3 className="text-2xl font-display font-semibold mb-6">
-                Send Me a Message
-              </h3>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <h3
+              className="text-2xl font-serif font-bold mb-8"
+              style={{ color: "#2d2d2d" }}
+            >
+              Send Me a Message
+            </h3>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {/* Name */}
                 <div>
-                  <label htmlFor="name" className="block text-gray-300 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2"
+                    style={{ color: "#2d2d2d" }}
+                  >
                     Your Name
                   </label>
                   <input
@@ -156,12 +213,23 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none"
+                    style={{
+                      backgroundColor: "#fdf8f3",
+                      borderColor: "#a0a0a0",
+                      borderOpacity: 0.3,
+                    }}
                     required
                   />
                 </div>
+
+                {/* Email */}
                 <div>
-                  <label htmlFor="email" className="block text-gray-300 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                    style={{ color: "#2d2d2d" }}
+                  >
                     Your Email
                   </label>
                   <input
@@ -170,14 +238,24 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none"
+                    style={{
+                      backgroundColor: "#fdf8f3",
+                      borderColor: "#a0a0a0",
+                      borderOpacity: 0.3,
+                    }}
                     required
                   />
                 </div>
               </div>
-              
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-300 mb-2">
+
+              {/* Message */}
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: "#2d2d2d" }}
+                >
                   Your Message
                 </label>
                 <textarea
@@ -186,25 +264,34 @@ const Contact = () => {
                   rows="5"
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                  className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none resize-none"
+                  style={{
+                    backgroundColor: "#fdf8f3",
+                    borderColor: "#a0a0a0",
+                    borderOpacity: 0.3,
+                  }}
                   required
-                ></textarea>
+                />
               </div>
-              
+
               <motion.button
                 type="submit"
-                className="px-8 py-3 bg-gradient-to-r from-primary to-accent rounded-lg text-white font-medium hover:shadow-lg transition-all"
+                className="btn-primary w-full"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
                 Send Message
               </motion.button>
+
+              <p className="text-sm text-center" style={{ color: "#a0a0a0" }}>
+                I'll get back to you within 24 hours.
+              </p>
             </form>
           </motion.div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
