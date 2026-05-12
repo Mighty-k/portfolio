@@ -27,6 +27,11 @@ export default defineConfig({
       webp: {
         quality: 75,
       },
+      // Output WebP versions instead of originals
+      disableVar: true,
     }),
   ],
+  build: {
+    assetsInlineLimit: 4096,
+  },
 });

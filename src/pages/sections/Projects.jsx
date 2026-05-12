@@ -9,63 +9,73 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: "Mighty Estates",
+      description:
+        "Mighty Estates is a full-featured real estate platform connecting buyers, renters, sellers, and agents across Nigeria. Built with Next.js and TypeScript, it delivers a seamless property search experience with advanced filtering by city, property type, and price range.",
+      tags: ["nextjs", "tailwind", "typescript"],
+      image: "/images/mighty-estates.webp",
+      github: "https://github.com/Mighty-k/mighty-estates",
+      live: "https://mighty-estates.vercel.app/",
+    },
+    {
+      id: 2,
       title: "BookHaven",
       description:
         "BookHaven is a full-stack e-commerce platform for books that lets users browse, search, and purchase books online. It combines a modern React frontend with an Express backend and MongoDB database to deliver a complete bookstore experience. Users can explore a wide range of books, view detailed information, and manage their shopping cart with ease.",
       tags: ["react", "tailwind", "typescript", "express", "mongodb"],
-      image: "/images/bookhaven.png",
+      image: "/images/bookhaven.webp",
       github: "https://github.com/Mighty-k/BookHaven",
       live: "https://bookhaven-mocha.vercel.app/",
     },
     {
-      id: 2,
+      id: 3,
       title: "Movie-Explorer",
       description:
         "A sleek movie discovery app built with React, TypeScript, and Tailwind CSS, powered by the TMDb API. Users can search for movies, view detailed information such as ratings, cast, trailers, and genres, and explore trending or popular titles",
       tags: ["react", "tailwind", "typescript"],
-      image: "/images/movies.png",
+      image: "/images/movies.webp",
       github: "https://github.com/Mighty-k/movie-explorer",
       live: "https://movie-explorer-psi.vercel.app/",
     },
 
     {
-      id: 3,
+      id: 4,
       title: "Portfolio Website",
       description:
         "Modern portfolio website with animations and responsive design",
       tags: ["react", "tailwind"],
-      image: "/images/portfolio.png",
+      image: "/images/portfolio.webp",
       github: "https://github.com/Mighty-k/portfolio",
       live: "https://mighty-dev.netlify.app",
     },
 
     {
-      id: 4,
+      id: 5,
       title: "Notes App",
       description:
-        "A  lightweight notes application with user authentication and basic notes app functionalities ",
+        "A lightweight notes application with user authentication and basic notes app functionalities ",
       tags: ["HTML", "css", "express", "mongodb"],
-      image: "/images/notes.png",
+      image: "/images/notes.webp",
       github: "https://github.com/Mighty-k/notesApp",
       live: "https://notes-lazydev.vercel.app/",
     },
     {
-      id: 5,
+      id: 6,
       title: "QuizMe App",
       description:
         "Interactive quiz application with multiple categories and score tracking",
       tags: ["react"],
-      image: "/images/quiz.png",
+      image: "/images/quiz.webp",
       github: "https://github.com/Mighty-k/quiz-app",
       live: "https://ms-quizapp.netlify.app/",
     },
     {
-      id: 6,
+      id: 7,
       title: "FYCL Clearance System",
       description:
         "A comprehensive clearance system for university graduates with automated workflows",
       tags: ["react", "express", "mongodb"],
-      image: "/images/clearance.png",
+      image: "/images/clearance.webp",
       github: "https://github.com/Mighty-k/clearance-system",
       live: "https://fycl.netlify.app",
     },
@@ -79,6 +89,7 @@ const Projects = () => {
     "mongodb",
     "tailwind",
     "typescript",
+    "nextjs",
   ];
 
   const filteredProjects =

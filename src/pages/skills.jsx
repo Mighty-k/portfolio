@@ -1,15 +1,15 @@
-import html from "../img/html.png";
-import css from "../img/css.png";
-import js from "../img/js.png";
-import react from "../img/react.png";
-import bootstrap from "../img/bootstrap.png";
-import node from "../img/node.png";
-import express from "../img/express.png";
-import php from "../img/php.png";
-import vs from "../img/vs.png";
-import git from "../img/git.png";
-import typescript from "../img/typescript.png";
-import figma from "../img/figma.png";
+import html from "/images/html.webp";
+import css from "/images/css.webp";
+import js from "/images/js.webp";
+import react from "/images/react.webp";
+import bootstrap from "/images/bootstrap.webp";
+import node from "/images/node.webp";
+import express from "/images/express.webp";
+import php from "/images/php.webp";
+import vs from "/images/vs.webp";
+import git from "/images/git.webp";
+import typescript from "/images/typescript.webp";
+import figma from "/images/figma.webp";
 import { motion } from "framer-motion";
 
 const Skills = () => {
