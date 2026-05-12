@@ -12,8 +12,8 @@ function App() {
     <Router>
       <AnimatePresence mode="wait">
         <div
-          style={{ backgroundColor: "#fdf8f3", color: "#2d2d2d" }}
-          className="min-h-screen text-charcoal font-sans"
+          style={{ backgroundColor: "#FDFAF6", color: "#2C2825" }}
+          className="min-h-screen font-sans"
         >
           <CursorChaser />
           <Landing />

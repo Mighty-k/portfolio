@@ -1,293 +1,154 @@
 // components/sections/Contact.jsx
-import { motion } from "framer-motion";
 import { useState } from "react";
-import {
-  FiMail,
-  FiMapPin,
-  FiPhone,
-  FiGithub,
-  FiLinkedin,
-} from "react-icons/fi";
+import { FiMail, FiMapPin, FiPhone, FiGithub, FiLinkedin, FiSend, FiCheck } from "react-icons/fi";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
+  const handleChange = (e) => setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setSubmitted(true);
+      setIsSubmitting(false);
+      setFormData({ name: "", email: "", message: "" });
+    }, 1500);
   };
 
+  const contactInfo = [
+    { icon: <FiMail className="text-lg" />, label: "Email", value: "tiolupopo@gmail.com", href: "mailto:tiolupopo@gmail.com" },
+    { icon: <FiPhone className="text-lg" />, label: "Phone", value: "+234 704 283 7826", href: "tel:+2347042837826" },
+    { icon: <FiMapPin className="text-lg" />, label: "Location", value: "Lagos, Nigeria" },
+  ];
+
   return (
-    <section
-      id="contact"
-      className="py-24 px-6"
-      style={{ backgroundColor: "#fdf8f3" }}
-    >
+    <section id="contact" className="py-24 px-6 md:px-12" style={{ backgroundColor: "#FDFAF6" }}>
       <div className="container mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="mb-20"
-        >
-          <div className="flex items-end gap-4 mb-6">
-            <h2
-              className="text-5xl md:text-6xl font-serif font-bold"
-              style={{ color: "#2d2d2d" }}
-            >
-              Get In <span style={{ color: "#6b8e6f" }}>Touch</span>
-            </h2>
-            {/* <div className="accent-line mb-3" /> */}
-          </div>
-          <p className="text-xl max-w-3xl" style={{ color: "#a0a0a0" }}>
-            I'm always open to new projects, collaborations, and conversations.
-            Feel free to reach out via email or social channels.
+        {/* Header */}
+        <div className="max-w-2xl mb-12">
+          <p className="section-label mb-3">Get In Touch</p>
+          <h2 className="text-4xl md:text-5xl font-serif font-semibold mb-4" style={{ color: "#2C2825" }}>
+            Let's create something <span className="text-gradient">together</span>
+          </h2>
+          <p className="text-base" style={{ color: "#8B8680" }}>
+            Have a project in mind? I'm always open to discussing new opportunities.
           </p>
-        </motion.div>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="space-y-8"
-          >
-            {/* Email */}
-            <div className="flex gap-4">
-              <div
-                className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
-              >
-                <FiMail className="text-2xl" />
-              </div>
-              <div>
-                <h4
-                  className="font-serif font-bold mb-1"
-                  style={{ color: "#2d2d2d" }}
-                >
-                  Email
-                </h4>
-                <a
-                  href="mailto:tiolupopo@gmail.com"
-                  style={{ color: "#6b8e6f" }}
-                  className="hover:underline text-lg font-medium"
-                >
-                  tiolupopo@gmail.com
-                </a>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          {/* Left Column */}
+          <div className="lg:col-span-4 space-y-6">
+            {contactInfo.map((item, index) => (
+              <a key={index} href={item.href || undefined} className="flex items-start gap-4 group">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "rgba(122, 158, 126, 0.1)", color: "#7A9E7E" }}>
+                  {item.icon}
+                </div>
+                <div>
+                  <p className="text-xs font-medium mb-0.5" style={{ color: "#8B8680" }}>{item.label}</p>
+                  <p className="font-medium" style={{ color: "#2C2825" }}>{item.value}</p>
+                </div>
+              </a>
+            ))}
 
-            {/* Phone */}
-            <div className="flex gap-4">
-              <div
-                className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
-              >
-                <FiPhone className="text-2xl" />
-              </div>
-              <div>
-                <h4
-                  className="font-serif font-bold mb-1"
-                  style={{ color: "#2d2d2d" }}
-                >
-                  Phone
-                </h4>
-                <a
-                  href="tel:+2347042837826"
-                  style={{ color: "#6b8e6f" }}
-                  className="hover:underline text-lg font-medium"
-                >
-                  +234 704 283 7826
-                </a>
-              </div>
-            </div>
-
-            {/* Location */}
-            <div className="flex gap-4">
-              <div
-                className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
-              >
-                <FiMapPin className="text-2xl" />
-              </div>
-              <div>
-                <h4
-                  className="font-serif font-bold mb-1"
-                  style={{ color: "#2d2d2d" }}
-                >
-                  Location
-                </h4>
-                <p style={{ color: "#a0a0a0" }} className="text-lg font-medium">
-                  Lagos, Nigeria
-                </p>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div
-              className="pt-8 border-t"
-              style={{ borderColor: "#a0a0a0", borderOpacity: 0.2 }}
-            >
-              <h4
-                className="font-serif font-bold mb-4"
-                style={{ color: "#2d2d2d" }}
-              >
-                Follow Me
-              </h4>
-              <div className="flex gap-4">
-                <motion.a
-                  href="https://github.com/Mighty-k"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-lg flex items-center justify-center text-xl transition-colors"
-                  style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
-                  whileHover={{ y: -4, scale: 1.1 }}
-                >
+            <div className="pt-6">
+              <p className="section-label mb-4">Follow Me</p>
+              <div className="flex gap-3">
+                <a href="https://github.com/Mighty-k" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl flex items-center justify-center transition-colors" style={{ backgroundColor: "rgba(139, 134, 128, 0.1)", color: "#8B8680" }}>
                   <FiGithub />
-                </motion.a>
-                <motion.a
-                  href="https://linkedin.com/in/mighty-popoola"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-lg flex items-center justify-center text-xl transition-colors"
-                  style={{ backgroundColor: "#e8e3d9", color: "#6b8e6f" }}
-                  whileHover={{ y: -4, scale: 1.1 }}
-                >
+                </a>
+                <a href="https://linkedin.com/in/mighty-popoola" target="_blank" rel="noopener noreferrer" className="w-11 h-11 rounded-xl flex items-center justify-center transition-colors" style={{ backgroundColor: "rgba(139, 134, 128, 0.1)", color: "#8B8680" }}>
                   <FiLinkedin />
-                </motion.a>
+                </a>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="lg:col-span-2 card p-8"
-          >
-            <h3
-              className="text-2xl font-serif font-bold mb-8"
-              style={{ color: "#2d2d2d" }}
-            >
-              Send Me a Message
-            </h3>
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Name */}
-                <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-2"
-                    style={{ color: "#2d2d2d" }}
-                  >
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none"
-                    style={{
-                      backgroundColor: "#fdf8f3",
-                      borderColor: "#a0a0a0",
-                      borderOpacity: 0.3,
-                    }}
-                    required
-                  />
+          {/* Right Column - Form */}
+          <div className="lg:col-span-8">
+            <div className="card p-8">
+              {!submitted ? (
+                <>
+                  <h3 className="text-xl font-serif font-semibold mb-6" style={{ color: "#2C2825" }}>
+                    Send me a message
+                  </h3>
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      <div>
+                        <label className="block text-sm font-medium mb-2" style={{ color: "#2C2825" }}>Name</label>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-xl border transition-all focus:outline-none"
+                          style={{ backgroundColor: "rgba(232, 223, 213, 0.5)", borderColor: "transparent", color: "#2C2825" }}
+                          onFocus={(e) => e.target.style.borderColor = "#7A9E7E"}
+                          onBlur={(e) => e.target.style.borderColor = "transparent"}
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2" style={{ color: "#2C2825" }}>Email</label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          required
+                          className="w-full px-4 py-3 rounded-xl border transition-all focus:outline-none"
+                          style={{ backgroundColor: "rgba(232, 223, 213, 0.5)", borderColor: "transparent", color: "#2C2825" }}
+                          onFocus={(e) => e.target.style.borderColor = "#7A9E7E"}
+                          onBlur={(e) => e.target.style.borderColor = "transparent"}
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium mb-2" style={{ color: "#2C2825" }}>Message</label>
+                      <textarea
+                        name="message"
+                        rows="4"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-xl border transition-all focus:outline-none resize-none"
+                        style={{ backgroundColor: "rgba(232, 223, 213, 0.5)", borderColor: "transparent", color: "#2C2825" }}
+                        onFocus={(e) => e.target.style.borderColor = "#7A9E7E"}
+                        onBlur={(e) => e.target.style.borderColor = "transparent"}
+                      />
+                    </div>
+                    <button type="submit" className="btn-primary w-full flex items-center justify-center gap-2" disabled={isSubmitting}>
+                      {isSubmitting ? (
+                        <>
+                          <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <span>Send Message</span>
+                          <FiSend className="text-sm" />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </>
+              ) : (
+                <div className="text-center py-10">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{ backgroundColor: "rgba(122, 158, 126, 0.1)", color: "#7A9E7E" }}>
+                    <FiCheck className="text-2xl" />
+                  </div>
+                  <h3 className="text-xl font-serif font-semibold mb-2" style={{ color: "#2C2825" }}>Message Sent!</h3>
+                  <p className="text-sm mb-4" style={{ color: "#8B8680" }}>I'll get back to you within 24 hours.</p>
+                  <button onClick={() => setSubmitted(false)} className="text-sm font-medium underline" style={{ color: "#7A9E7E" }}>
+                    Send another
+                  </button>
                 </div>
-
-                {/* Email */}
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-2"
-                    style={{ color: "#2d2d2d" }}
-                  >
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none"
-                    style={{
-                      backgroundColor: "#fdf8f3",
-                      borderColor: "#a0a0a0",
-                      borderOpacity: 0.3,
-                    }}
-                    required
-                  />
-                </div>
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                  style={{ color: "#2d2d2d" }}
-                >
-                  Your Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border transition-all focus:outline-none resize-none"
-                  style={{
-                    backgroundColor: "#fdf8f3",
-                    borderColor: "#a0a0a0",
-                    borderOpacity: 0.3,
-                  }}
-                  required
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                className="btn-primary w-full"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Send Message
-              </motion.button>
-
-              <p className="text-sm text-center" style={{ color: "#a0a0a0" }}>
-                I'll get back to you within 24 hours.
-              </p>
-            </form>
-          </motion.div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>

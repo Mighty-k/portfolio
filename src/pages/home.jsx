@@ -24,7 +24,7 @@ const Landing = () => {
   }
 
   return (
-    <div style={{ backgroundColor: "#fdf8f3" }}>
+    <div style={{ backgroundColor: "#FDFAF6" }}>
       <Navbar />
       <main className="overflow-hidden">
         <Hero />

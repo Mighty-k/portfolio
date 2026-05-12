@@ -1,18 +1,17 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap")
-layer;
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap");
 
 @theme {
-  --color-slate-warm: #2d2d2d;
-  --color-sage: #6b8e6f;
-  --color-cream: #fdf8f3;
-  --color-gray-warm: #a0a0a0;
-  --color-charcoal-deep: #1a1a1a;
-  --color-background: #fdf8f3;
-  --color-text-secondary: #a0a0a0;
+  --color-cream: #FDFAF6;
+  --color-sage: #7A9E7E;
+  --color-sage-dark: #5C7E60;
+  --color-terracotta: #C4785C;
+  --color-charcoal: #2C2825;
+  --color-stone: #8B8680;
+  --color-sand: #E8DFD5;
 
-  --font-serif: "IBM Plex Serif", serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -22,112 +21,132 @@ layer;
 
   body {
     @apply antialiased font-sans;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-color: var(--color-background);
-    color: var(--color-slate-warm);
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
+    overflow-x: hidden;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
 
   a {
     color: inherit;
+    text-decoration: none;
   }
 
-  /* Noise texture overlay */
+  /* Elegant grain overlay */
   body::before {
     content: "";
     position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 9999;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-    opacity: 0.02;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.001ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.001ms !important;
-    }
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.025;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply px-8 py-3.5 font-medium rounded-lg transition-all;
-    background-color: var(--color-slate-warm);
+    @apply px-8 py-4 font-medium rounded-full transition-all duration-300;
+    background-color: var(--color-charcoal);
     color: var(--color-cream);
-    box-shadow: 0 4px 12px rgba(45, 45, 45, 0.12);
+    letter-spacing: 0.02em;
+    position: relative;
+    overflow: hidden;
   }
 
-  .btn-primary:hover {
-    background-color: var(--color-charcoal-deep);
-    box-shadow: 0 8px 20px rgba(45, 45, 45, 0.2);
-    transform: translateY(-2px);
+  .btn-primary::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-sage);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.22, 0.8, 0.12, 1);
+    z-index: 0;
+  }
+
+  .btn-primary:hover::before {
+    transform: translateX(0);
+  }
+
+  .btn-primary span {
+    position: relative;
+    z-index: 1;
   }
 
   .btn-secondary {
-    @apply px-8 py-3.5 font-medium rounded-lg transition-all;
+    @apply px-8 py-4 font-medium rounded-full transition-all duration-300;
     background-color: transparent;
-    color: var(--color-slate-warm);
-    border: 2px solid var(--color-slate-warm);
+    color: var(--color-charcoal);
+    border: 1.5px solid var(--color-charcoal);
+    letter-spacing: 0.02em;
   }
 
   .btn-secondary:hover {
-    background-color: var(--color-slate-warm);
+    background-color: var(--color-charcoal);
     color: var(--color-cream);
-    box-shadow: 0 4px 12px rgba(45, 45, 45, 0.12);
-  }
-
-  .section-title {
-    @apply text-4xl md:text-5xl font-serif font-bold;
-    color: var(--color-slate-warm);
-  }
-
-  .section-subtitle {
-    @apply text-lg;
-    color: var(--color-text-secondary);
   }
 
   .card {
-    background-color: var(--color-cream);
-    border: 1px solid var(--color-gray-warm);
-    border-opacity: 0.3;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(45, 45, 45, 0.08);
-    transition: all 250ms cubic-bezier(0.22, 0.8, 0.12, 1);
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(139, 134, 128, 0.15);
+    border-radius: 24px;
+    transition: all 0.5s cubic-bezier(0.22, 0.8, 0.12, 1);
   }
 
   .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(45, 45, 45, 0.12);
+    transform: translateY(-8px);
+    box-shadow: 0 32px 64px -12px rgba(44, 40, 37, 0.12);
+    background: rgba(255, 255, 255, 0.9);
   }
 
-  .accent-line {
-    height: 3px;
-    background-color: var(--color-sage);
-    width: 80px;
+  .section-label {
+    @apply text-xs font-semibold tracking-[0.25em] uppercase;
+    color: var(--color-sage);
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-terracotta) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
-.sr-only {
-  position: absolute !important;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-sand);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-stone);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }
