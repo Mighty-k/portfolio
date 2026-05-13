@@ -142,7 +142,19 @@ const FeaturedCard = ({ project, index }) => (
         ))}
       </div>
       <h3 className="text-xl font-serif font-semibold text-white mb-1">{project.title}</h3>
-      <p className="text-sm text-white/80 line-clamp-1">{project.description}</p>
+      <p className="text-sm text-white/80 line-clamp-1 mb-3">{project.description}</p>
+      <div className="flex gap-4">
+        {project.github && (
+          <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-xs font-medium flex items-center gap-1 text-white/80 hover:text-white transition-colors">
+            <FiGithub className="text-sm" /> Code
+          </a>
+        )}
+        {project.live && (
+          <a href={project.live} target="_blank" rel="noopener noreferrer" className="text-xs font-medium flex items-center gap-1 text-white/80 hover:text-white transition-colors">
+            <FiExternalLink className="text-sm" /> Live
+          </a>
+        )}
+      </div>
     </div>
   </motion.div>
 );
@@ -155,7 +167,7 @@ const Projects = () => {
   }, [activeFilter]);
 
   const featured = useMemo(() => projects.filter((p) => p.featured), []);
-  const regular = useMemo(() => filtered.filter((p) => !p.featured), [filtered]);
+  const regular = useMemo(() => filtered, [filtered]);
 
   return (
     <section id="projects" className="py-24 px-6 md:px-12" style={{ backgroundColor: "#FDFAF6" }}>
